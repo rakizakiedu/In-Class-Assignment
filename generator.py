@@ -90,9 +90,15 @@ def main():
     jobs = loadJobs(JOBS_CSV)
     skills = loadSkills(SKILLS_TXT)
 
-    try:
-        bullets = generateResumeContent(jobs, skills)
-        for bullet in bullets:
-            print(f" • {bullet}")
-    except Exception as e:
-        print(f" Error: {e}")
+    for job in jobs:
+        title = job.get("job_title", job.get("title", "Unknown"))
+        company = job.get("company", job.get("company_name", "Unknown"))
+        print(f"\n Resume bullet points for {title} at {company}:")
+        print("-" * 50)
+        
+        try:
+            bullets = generateResumeContent(jobs, skills)
+            for bullet in bullets:
+                print(f" • {bullet}")
+        except Exception as e:
+            print(f" Error: {e}")
