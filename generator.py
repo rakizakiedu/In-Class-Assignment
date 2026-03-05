@@ -8,7 +8,7 @@ SKILLS_TXT = "skills.txt"
 def loadJobs(filepath):
     jobs = []
     
-    with open('filepath', 'r') as file:
+    with open(filepath, 'r') as file:
         reader = csv.DictReader(f)
         for line in reader:
             jobs.append(line)
@@ -18,7 +18,7 @@ def loadJobs(filepath):
 def loadSkills(filepath):
     skills = []
 
-    with open('skills.txt', 'r') as file:
+    with open(filepath, 'r') as file:
         for line in file:
             skills.append(line.strip())
     
