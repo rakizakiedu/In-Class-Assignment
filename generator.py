@@ -97,8 +97,10 @@ def main():
         print("-" * 50)
         
         try:
-            bullets = generateResumeContent(jobs, skills)
+            bullets = generateResumeContent(job, skills)
             for bullet in bullets:
                 print(f" • {bullet}")
         except Exception as e:
             print(f" Error: {e}")
+    if __name__ == "__main__":
+        main()
