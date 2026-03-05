@@ -9,7 +9,7 @@ def loadJobs(filepath):
     jobs = []
     
     with open(filepath, 'r') as file:
-        reader = csv.DictReader(f)
+        reader = csv.DictReader(file)
         for line in reader:
             jobs.append(line)
     
